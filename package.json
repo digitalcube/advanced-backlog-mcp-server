@@ -18,6 +18,9 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.8.0",
+    "backlog-js": "^0.13.3",
+    "isomorphic-fetch": "^3.0.0",
+    "isomorphic-form-data": "^2.0.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {
