@@ -70,6 +70,8 @@ macOSでは、以下のコマンドでクリップボードに直接コピーで
 echo "\"$(pwd)/build/index.js\"" | pbcopy
 ```
 
+変更を保存したあとは、必ずClaude DesktopやCursorアプリを再起動してください。
+
 ### APIキーの設定
 
 APIキーはBacklogアカウント設定から取得できます。
