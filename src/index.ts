@@ -20,7 +20,7 @@ const backlog = new backlogjs.Backlog({
 const server = new McpServer({
   name: "advanced_backlog_server",
   description: 'This is a server that can be used to interact with Backlog',
-  version: "0.0.1",
+  version: "0.0.2",
 });
 
 
