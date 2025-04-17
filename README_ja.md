@@ -103,6 +103,7 @@ Claude Desktopでは、以下のような自然言語クエリが可能です：
 - `get_backlog_user` - 特定のユーザーに関する情報を取得
 - `list_backlog_users` - Backlogスペース内のすべてのユーザーを一覧表示
 - `list_backlog_own_notifications` - 現在のユーザーの通知を一覧表示
+- `list_backlog_daily_activities` - 特定のユーザーの特定日におけるアクティビティを取得
 
 ## デバッグ
 

@@ -5,6 +5,7 @@ import * as backlogjs from 'backlog-js';
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
+import { BacklogActivityService } from './daily-report-generator/activity-service.js';
 
 
 
@@ -241,6 +242,21 @@ server.tool("list_backlog_own_notifications", {
     content: [{
       type: "text",
       text: JSON.stringify(notifications)
+    }]
+  }
+})
+
+server.tool("list_backlog_daily_activities", {
+  userId: z.number().describe("User id"),
+  date: z.string().describe("Date"),
+}, async ({ userId, date }) => {
+  const backlogUserId = userId < 1 ? await backlog.getMyself().then(myself => myself.id) : userId;
+  const service = new BacklogActivityService(backlog);
+  const activities = await service.getMeaningfulActivities(backlogUserId, date);
+  return {
+    content: [{
+      type: "text",
+      text: JSON.stringify(activities)
     }]
   }
 })
