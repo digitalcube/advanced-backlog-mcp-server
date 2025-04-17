@@ -256,7 +256,10 @@ server.tool("list_backlog_daily_activities", {
   return {
     content: [{
       type: "text",
-      text: JSON.stringify(activities)
+      text: JSON.stringify({
+        ...activities,
+        report: undefined
+      })
     }]
   }
 })
