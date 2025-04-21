@@ -13,6 +13,9 @@
   "scripts": {
     "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
     "prepare": "npm run build",
+    "build:sea:mac": "npm run build && node scripts/sea-mac.js",
+    "build:sea:win": "npm run build && node scripts/sea-windows.js",
+    "build:sea": "npm run build && node scripts/sea-mac.js && node scripts/sea-windows.js",
     "watch": "tsc --watch",
     "inspector": "npx @modelcontextprotocol/inspector build/index.js",
     "test": "vitest run",
@@ -27,6 +30,8 @@
   },
   "devDependencies": {
     "@types/node": "^20.11.24",
+    "esbuild": "^0.25.2",
+    "postject": "^1.0.0-alpha.6",
     "typescript": "^5.3.3",
     "vitest": "^1.3.1"
   }
