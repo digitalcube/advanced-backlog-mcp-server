@@ -23,12 +23,25 @@ npm install
 
 # ビルドスクリプトを実行
 npm run build      # TypeScriptのビルド
-node scripts/sea.js  # SEAバイナリの生成
+
+# macOS向けビルド
+node scripts/sea-mac.js
+
+# Windows向けビルド
+node scripts/sea-windows.js
 ```
 
-ビルドが成功すると、`dist`ディレクトリに以下のファイルが生成されます：
-- `backlog-sea` - 実行可能なSEAバイナリ
-- `backlog-sea.blob` - SEAブロブファイル
+ビルドが成功すると、以下のディレクトリとファイルが生成されます：
+
+#### macOS向け（`dist/macos`ディレクトリ）
+- `advanced-backlog-mcp` - macOS用実行可能なSEAバイナリ
+- `advanced-backlog-mcp.blob` - SEAブロブファイル
+- `sea-bundle.js` - バンドルされたJavaScriptファイル
+- `sea-config.json` - SEA設定ファイル
+
+#### Windows向け（`dist/windows`ディレクトリ）
+- `advanced-backlog-mcp.exe` - Windows用実行可能なSEAバイナリ
+- `advanced-backlog-mcp.blob` - SEAブロブファイル
 - `sea-bundle.js` - バンドルされたJavaScriptファイル
 - `sea-config.json` - SEA設定ファイル
 
@@ -57,8 +70,9 @@ git push origin vX.Y.Z
 4. 作成したタグを選択（例：`vX.Y.Z`）
 5. リリースタイトルを入力（例：「Backlog v1.0.0」）
 6. リリースノートを記入（変更点や新機能などを説明）
-7. `dist/backlog-sea`ファイルをドラッグ＆ドロップしてアップロード
-   - macOS用とWindows用に別々のバイナリを用意する場合は、ファイル名を変更（例：`backlog-sea-macos`、`backlog-sea-win.exe`）
+7. ビルドされたバイナリをドラッグ＆ドロップしてアップロード
+   - macOS用: `dist/macos/advanced-backlog-mcp`
+   - Windows用: `dist/windows/advanced-backlog-mcp.exe`
 8. 「Publish release」ボタンをクリック
 
 ## ユーザーのインストール方法
@@ -67,25 +81,11 @@ git push origin vX.Y.Z
 
 ### macOSユーザー向け
 
-```bash
-# リリースページからダウンロードしたバイナリを実行可能にする
-chmod +x backlog-sea
-
-# PATHの通ったディレクトリに移動（オプション）
-sudo mv backlog-sea /usr/local/bin/backlog
-
-# 実行
-backlog
-```
+TBD
 
 ### Windowsユーザー向け
 
-```
-1. リリースページからbacklog-sea-win.exeをダウンロード
-2. 任意のディレクトリに保存
-3. コマンドプロンプトまたはPowerShellから実行
-   > path\to\backlog-sea-win.exe
-```
+TBD
 
 ## リリース自動化（オプション）
 

@@ -13,6 +13,9 @@
   "scripts": {
     "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
     "prepare": "npm run build",
+    "build:sea:mac": "npm run build && node scripts/sea-mac.js",
+    "build:sea:win": "npm run build && node scripts/sea-windows.js",
+    "build:sea": "npm run build && node scripts/sea-mac.js && node scripts/sea-windows.js",
     "watch": "tsc --watch",
     "inspector": "npx @modelcontextprotocol/inspector build/index.js",
     "test": "vitest run",
