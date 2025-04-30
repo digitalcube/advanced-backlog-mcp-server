@@ -90,21 +90,15 @@ Claude Desktopでは、以下のような自然言語クエリが可能です：
 
 このサーバーは以下のツールを提供しています：
 
-- `list_backlog_space` - Backlogスペースに関する情報を取得
-- `list_backlog_projects` - Backlogスペース内のすべてのプロジェクトを一覧表示
 - `list_backlog_recently_viewed_issues` - 最近表示された課題を一覧表示
-- `search_backlog_issues` - 様々なフィルターで課題を検索
-- `get_backlog_issue` - 特定の課題の詳細を取得
 - `list_backlog_recently_viewed_projects` - 最近表示されたプロジェクトを一覧表示
-- `get_backlog_project` - 特定のプロジェクトの詳細を取得
 - `list_backlog_recently_viewed_wikis` - 最近表示されたWikiを一覧表示
-- `get_backlog_wiki` - 特定のWikiの詳細を取得
 - `list_backlog_recent_user_activities` - 特定のユーザーのアクティビティを一覧表示
-- `get_backlog_current_user` - 現在のユーザーに関する情報を取得
-- `get_backlog_user` - 特定のユーザーに関する情報を取得
-- `list_backlog_users` - Backlogスペース内のすべてのユーザーを一覧表示
-- `list_backlog_own_notifications` - 現在のユーザーの通知を一覧表示
 - `list_backlog_daily_activities` - 特定のユーザーの特定日におけるアクティビティを取得
+
+基本的なAPI操作については、[公式MCPサーバー](https://github.com/nulab/backlog-mcp-server/)をご利用ください。
+
+https://github.com/nulab/backlog-mcp-server/
 
 ## デバッグ
 
