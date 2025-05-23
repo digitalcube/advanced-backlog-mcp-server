@@ -73,6 +73,34 @@ server.tool("list_backlog_recently_viewed_wikis",
   }
 );
 
+server.tool("list_backlog_issue_and_comments", {
+  issueId: z
+    .string()
+    .describe("Issue ID")
+    .optional(),
+  issueKey: z
+    .string()
+    .describe("Issue key")
+    .optional(),
+  count: z.number().optional().describe("Number of comments to retrieve"),
+  order: z.enum(["asc", "desc"]).optional().describe("Sort order"),
+}, async ({ issueId, issueKey, count, order }) => {
+  const issueIdOrKey = issueId || issueKey;
+  if (!issueIdOrKey) {
+    return {
+      content: [{ type: "text", text: "Issue ID or key is required" }]
+    }
+  }
+  const issue = await backlog.getIssue(issueIdOrKey);
+  const comments = await backlog.getIssueComments(issueIdOrKey, {
+    order: order || "asc",
+    count: count || 100
+  });
+  return {
+    content: [{ type: "text", text: JSON.stringify({ issue, comments }) }]
+  }
+})
+
 server.tool("list_backlog_recent_user_activities",
   {
     userId: z.number().describe("User id"),
